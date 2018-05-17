@@ -1,19 +1,16 @@
 require 'city'
-require 'pub'
 
 RSpec.describe City do
   it "city has pub" do
-    pub = Pub.new
-    city = City.new "Balneario Camboriu", pub
-    expect(city.pub).to be(pub)
+    city = City.new "Balneario Camboriu"
+    expect(city.name).to eq("Balneario Camboriu")
   end
   
   context "Balneario Camboriu's pub" do
-    pub = Pub.new
-    city = City.new "Balneario Camboriu", pub
+    city = City.new "Balneario Camboriu"
 
     it "does not delivery orders" do
-      expect(city.has_delivery?).to be(false)    
+      expect(city.delivery?).to be(false)    
     end
     
     it "have local withdraw" do
@@ -22,11 +19,10 @@ RSpec.describe City do
   end
 
   context "Itajai's pub" do
-    pub = Pub.new
-    city = City.new "Itajai", pub
+    city = City.new "Itajai"
 
     it "delivery orders" do
-      expect(city.has_delivery?).to be(true)    
+      expect(city.delivery?).to be(true)    
     end
 
     it "doesn't have local withdraw" do
@@ -35,11 +31,10 @@ RSpec.describe City do
   end
 
   context "Itapema's pub" do
-    pub = Pub.new
-    city = City.new "Itapema", pub
+    city = City.new "Itapema"
 
     it "delivery orders" do
-      expect(city.has_delivery?).to be(true)    
+      expect(city.delivery?).to be(true)    
     end
 
     it "have local withdraw" do

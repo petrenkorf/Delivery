@@ -1,12 +1,11 @@
 class City
-  attr_reader :pub, :name
+  attr_reader :name
   
-  def initialize(name, pub)
-    @pub  = pub
+  def initialize(name)
     @name = name
   end
 
-  def has_delivery?()
+  def delivery?()
     return false if @name == "Balneario Camboriu"
     return true
   end
