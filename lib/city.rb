@@ -10,4 +10,9 @@ class City
     return false if @name == "Balneario Camboriu"
     return true
   end
+
+  def local_withdraw?()
+    return false if @name == "Itajai"
+    return true
+  end
 end
